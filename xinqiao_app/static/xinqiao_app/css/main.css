@@ -1,0 +1,26 @@
+/* Page transition smooth fade */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+  animation-timing-function: ease-in-out;
+}
+
+/* Fallback fade animation */
+body {
+  transition: opacity 0.35s ease-in-out;
+}
+body.fade-out {
+  opacity: 0;
+}
+
+/* Optional: style for your language dropdown (the English select box) */
+#lang-select {
+  background: #111;
+  color: #ffd040;
+  border: 1px solid #ffd040;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
