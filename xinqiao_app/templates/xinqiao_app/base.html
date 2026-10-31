@@ -1,0 +1,40 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Xinqiao Company" %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'xinqiao_app/css/main.css' %}">
+</head>
+<body class="theme-dark">
+    <!-- Global Header / Navbar (shared on ALL pages) -->
+    <header class="main-header">
+        <div class="container header-wrap">
+            <a class="logo" href="{% url 'product_list' %}">XINQIAO</a>
+            <div class="header-controls">
+                <!-- Language Dropdown -->
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="zh-hans">中文</option>
+                </select>
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="theme-btn">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Unique page content area -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Global Footer (shared on ALL pages) -->
+    <footer class="main-footer">
+        <p>© 2026 Xinqiao. {% trans "All rights reserved." %}</p>
+    </footer>
+
+    <script src="{% static 'xinqiao_app/js/global.js' %}"></script>
+</body>
+</html>
